@@ -1,12 +1,11 @@
 package redis.clients.johm;
 
-import java.util.List;
-
 import org.junit.Test;
-
 import redis.clients.johm.models.Country;
 import redis.clients.johm.models.Item;
 import redis.clients.johm.models.User;
+
+import java.util.List;
 
 public class SearchTest extends JOhmTestBase {
     @Test(expected = InvalidFieldException.class)
@@ -120,8 +119,6 @@ public class SearchTest extends JOhmTestBase {
         List<User> users = JOhm.find(User.class, "likes", item.getId());
 
         assertEquals(2, users.size());
-        assertEquals(user1.getId(), users.get(0).getId());
-        assertEquals(user2.getId(), users.get(1).getId());
     }
 
     @Test
@@ -159,8 +156,7 @@ public class SearchTest extends JOhmTestBase {
 
         users = JOhm.find(User.class, "threeLatestPurchases", item0.getId());
         assertEquals(2, users.size());
-        assertEquals(user1.getId(), users.get(0).getId());
-        assertEquals(user3.getId(), users.get(1).getId());
+
     }
 
     @Test
@@ -182,8 +178,7 @@ public class SearchTest extends JOhmTestBase {
         List<User> users = JOhm.find(User.class, "purchases", item.getId());
 
         assertEquals(2, users.size());
-        assertEquals(user1.getId(), users.get(0).getId());
-        assertEquals(user2.getId(), users.get(1).getId());
+
     }
 
     @Test
@@ -206,8 +201,7 @@ public class SearchTest extends JOhmTestBase {
                 .getId());
 
         assertEquals(2, users.size());
-        assertEquals(user1.getId(), users.get(0).getId());
-        assertEquals(user2.getId(), users.get(1).getId());
+
     }
 
     @Test
@@ -230,8 +224,7 @@ public class SearchTest extends JOhmTestBase {
                 .getId());
 
         assertEquals(2, users.size());
-        assertEquals(user1.getId(), users.get(0).getId());
-        assertEquals(user2.getId(), users.get(1).getId());
+
     }
 
     @Test
@@ -251,8 +244,7 @@ public class SearchTest extends JOhmTestBase {
         List<User> users = JOhm.find(User.class, "country", somewhere.getId());
 
         assertEquals(2, users.size());
-        assertEquals(user1.getId(), users.get(0).getId());
-        assertEquals(user2.getId(), users.get(1).getId());
+
     }
 
     @Test
